@@ -6,12 +6,9 @@ module.exports = class extends Component {
         const { config, page, helper } = this.props;
         const { url_for, _p } = helper;
 
-        // This is just like a two-row table.
         return <Fragment>
-            <Index config={config} page={page} helper={helper} />
-            {/* Remove category for the category page. */}
             <div class="card">
-                {/* <div class="card-content">
+                <div class="card-content">
                     <nav class="breadcrumb" aria-label="breadcrumbs">
                         <ul>
                             <li><a href={url_for('/categories')}>{_p('common.category', Infinity)}</a></li>
@@ -21,9 +18,9 @@ module.exports = class extends Component {
                             <li class="is-active"><a href="#" aria-current="page">{page.category}</a></li>
                         </ul>
                     </nav>
-                </div> */}
+                </div>
             </div>
-            {/* <Index config={config} page={page} helper={helper} /> */}
+            <Index config={config} page={page} helper={helper} />
         </Fragment>;
     }
 };

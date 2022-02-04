@@ -37,9 +37,8 @@ class Profile extends Component {
                             <figure class="image is-128x128 mx-auto mb-2">
                                 <img class={'avatar' + (avatarRounded ? ' is-rounded' : '')} src={avatar} alt={author} />
                             </figure>
-                            {author ? <p class="title is-size-4 is-block" style={{'line-height': 'inherit', 'margin-bottom': '0.30rem'}}>{author}</p> : null}
-                            {/* {authorTitle ? <p style="white-space: pre-line; font-style: italic; margin-bottom: 0.70rem" class="is-size-6 is-block">{authorTitle}</p> : null} */}
-                            {authorTitle ? <p style="white-space: pre-line; font-style: italic; margin-bottom: 0.50rem; font-size: 0.8em" class="is-block">{authorTitle}</p> : null}
+                            {author ? <p class="title is-size-4 is-block" style={{'line-height': 'inherit'}}>{author}</p> : null}
+                            {authorTitle ? <p class="is-size-6 is-block">{authorTitle}</p> : null}
                             {location ? <p class="is-size-6 is-flex justify-content-center">
                                 <i class="fas fa-map-marker-alt mr-1"></i>
                                 <span>{location}</span>
@@ -47,34 +46,34 @@ class Profile extends Component {
                         </div>
                     </div>
                 </nav>
-                <nav class="level menu-list is-mobile" style="margin-bottom:1rem">
-                    <a class="level-item has-text-centered is-marginless" href={counter.post.url}>
+                <nav class="level is-mobile">
+                    <div class="level-item has-text-centered is-marginless">
                         <div>
                             <p class="heading">{counter.post.title}</p>
-                            <div>
+                            <a href={counter.post.url}>
                                 <p class="title">{counter.post.count}</p>
-                            </div>
+                            </a>
                         </div>
-                    </a>
-                    <a class="level-item has-text-centered is-marginless" href={counter.category.url}>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
                         <div>
                             <p class="heading">{counter.category.title}</p>
-                            <div>
+                            <a href={counter.category.url}>
                                 <p class="title">{counter.category.count}</p>
-                            </div>
+                            </a>
                         </div>
-                    </a>
-                    <a class="level-item has-text-centered is-marginless" href={counter.tag.url}>
+                    </div>
+                    <div class="level-item has-text-centered is-marginless">
                         <div>
                             <p class="heading">{counter.tag.title}</p>
-                            <div>
+                            <a href={counter.tag.url}>
                                 <p class="title">{counter.tag.count}</p>
-                            </div>
+                            </a>
                         </div>
-                    </a>
+                    </div>
                 </nav>
                 {followLink ? <div class="level">
-                    <a class="level-item button is-primary is-rounded" href={followLink} target="_blank" rel="noopener"><i class="fab fa-github"></i>&nbsp;&nbsp;{followTitle}</a>
+                    <a class="level-item button is-primary is-rounded" href={followLink} target="_blank" rel="noopener">{followTitle}</a>
                 </div> : null}
                 {socialLinks ? this.renderSocialLinks(socialLinks) : null}
             </div>
